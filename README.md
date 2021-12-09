@@ -12,7 +12,6 @@ Create another job called yourname_ci_merge in jenkins
 4.	If tests passed it should trigger next job - yourname_ci_merge
 5.	Merge job should simply merge code from dev to main 
 
-
 6.	3rd job CD/CDE – should get the code from main 
 7.	Deliver to AWs EC2
 8.	Cd app
