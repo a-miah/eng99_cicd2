@@ -51,7 +51,7 @@ Create another job called yourname_ci_merge in jenkins
 7. `Branches to build` > */dev  (or */main)
 8. `Build Trigger` > GitHub hook
 9. `Build Environment` > Provide Node & npm bin/folder to PATH 
-10. `Build` > `Execute Shell` > cd app, npm install, npm start
+10. `Build` > `Execute Shell` > cd app, npm install, npm start (comment out npm start for the time being otherwise test will continue to run)
 11. Make changes to your repo and push to github and Jenkins will automatically run the test
 12. Click on job > `Console Output` > Outcome of test given
 
@@ -102,3 +102,4 @@ EOF
 - Security Group for EC2: port 3000 - 0.0.0.0/0 > port 22 - 0.0.0.0/0
 5. Enter the IP address from the EC2 instance into the above ssh code
 
+test
