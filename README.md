@@ -102,4 +102,3 @@ EOF
 - Security Group for EC2: port 3000 - 0.0.0.0/0 > port 22 - 0.0.0.0/0
 5. Enter the IP address from the EC2 instance into the above ssh code
 
-test
