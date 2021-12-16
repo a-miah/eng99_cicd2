@@ -85,17 +85,28 @@ Tasks:
 7. Build:
 
 ```
-rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@63.32.54.254:/home/ubuntu
-rsync -avz -e "ssh -o StrictHostKeyChecking=no" environment ubuntu@63.32.54.254:/home/ubuntu
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@34.247.83.93:/home/ubuntu
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" environment ubuntu@34.247.83.93:/home/ubuntu
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" environment ubuntu@10.0.1.203:/home/ubuntu
 
 
-ssh -A -o StrictHostKeyChecking=no ubuntu@63.32.54.254  <<EOF
+ssh -A -o StrictHostKeyChecking=no ubuntu@10.0.1.203  <<EOF
+
+sudo chmod +x /home/ubuntu/environment/db/provision.sh
+sudo /home/ubuntu/environment/db/provision.sh
+exit
+EOF
+
+
+ssh -A -o StrictHostKeyChecking=no ubuntu@34.247.83.93  <<EOF
+
 
 echo "export DB_HOST=mongodb://10.0.1.203:27017/posts" >> .bashrc
 source ~/.bashrc
 
 sudo chmod +x /home/ubuntu/environment/app/provision.sh
 sudo /home/ubuntu/environment/app/provision.sh
+
 
 sudo cp environment/app/default etc/nginx/sites-available/default
 

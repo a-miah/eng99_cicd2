@@ -1,6 +1,6 @@
 # CICD Pipeline with Jenkins
 
-![](images/Full-Jenkins_pipeline.JPG)
+![](images/jenkins-cicd-pipe.JPG)
 
 ## SSH Keys GitHub - Jenkins
 
